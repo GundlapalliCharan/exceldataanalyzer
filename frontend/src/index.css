@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Background for the whole app */
+body {
+  @apply min-h-screen flex items-center justify-center;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  font-family: sans-serif;
+}
+
+/* Glass (transparent) effect box */
+.glass-box {
+  @apply bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-12 w-full max-w-2xl;
+}
+
+/* Headings */
+h2 {
+  @apply text-3xl font-bold mb-6 text-indigo-300;
+}
+
+/* Inputs */
+input {
+  @apply block w-full px-4 py-2 mb-4 bg-slate-800/70 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400;
+}
+
+/* Buttons */
+button {
+  @apply w-full px-4 py-2 mt-4 font-bold text-white bg-indigo-600 rounded-md hover:bg-indigo-700 transition duration-200;
+}
+
+/* Select dropdown */
+select {
+  @apply w-full px-4 py-2 mb-4 bg-slate-800/70 border border-slate-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-indigo-400;
+}
+
+/* File input */
+input[type="file"] {
+  @apply mb-6 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100;
+}
+
+/* Dashboard items */
+li {
+  @apply p-4 mb-2 bg-slate-800/70 rounded-md flex justify-between items-center text-white;
+}
+
+/* Links */
+a {
+  @apply text-indigo-400 hover:text-indigo-300 transition duration-200;
+}
