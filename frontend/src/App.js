@@ -37,7 +37,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    await axios.post("https://backend-pq33.onrender.com/signup", { username, password });
+    await axios.post("https://exceldataanalyzer.onrender.com/signup", { username, password });
     alert("Signup successful! Please login.");
     navigate("/login");
   };
@@ -59,7 +59,7 @@ function Login({ setUserId }) {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const res = await axios.post("https://backend-pq33.onrender.com/login", { username, password });
+    const res = await axios.post("https://exceldataanalyzer.onrender.com/login", { username, password });
     if (res.data.success) {
       setUserId(res.data.userId);
       navigate("/dashboard");
@@ -104,7 +104,7 @@ function Analyzer({ userId }) {
   };
 
   const saveHistory = async () => {
-    await axios.post("https://backend-pq33.onrender.com/history", {
+    await axios.post("https://exceldataanalyzer.onrender.com/history", {
       userId,
       fileName: "UploadedFile.xlsx",
       chartType,
@@ -266,7 +266,7 @@ function Dashboard({ userId }) {
   const [history, setHistory] = useState([]);
 
   React.useEffect(() => {
-    axios.get(`https://backend-pq33.onrender.com/history/${userId}`).then((res) => {
+    axios.get(`https://exceldataanalyzer.onrender.com/history/${userId}`).then((res) => {
       setHistory(res.data);
     });
   }, [userId]);
